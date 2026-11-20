@@ -21,6 +21,12 @@ NEGATIVE_PHRASES = [
 ]
 
 
+# EXTRA words
+POSITIVE_WORDS |= {"superb", "fantastic", "outstanding", "enjoyed", "yummy", "recommended", "shandar", "lajawab", "kamal", "mast", "pasandida"}
+NEGATIVE_WORDS |= {"disgusting", "horrible", "terrible", "filthy", "overpriced", "unhygienic", "tasteless", "overrated", "bakwas", "kharab"}
+NEGATIVE_PHRASES += ["not recommended", "dont recommend", "do not recommend", "not worth", "shame on you", "nothing special", "not satisfied", "not impressed", "never going back", "wasnt good", "wasnt that good", "bilkul bekar", "theek nahi", "thik nahi", "pasand nahi", "maza nahi"]
+
+
 def detect_sentiment(review):
     text = review.lower()
 
