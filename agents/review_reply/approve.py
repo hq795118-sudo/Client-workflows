@@ -1,6 +1,9 @@
 import os
 
 FOLDER = os.path.join(os.path.dirname(__file__), "output")
+import sys
+BUSINESS = "".join(c if c.isalnum() else "_" for c in (sys.argv[1] if len(sys.argv) > 1 else "default").strip().lower())
+FOLDER = os.path.join(FOLDER, BUSINESS)
 DRAFTS = os.path.join(FOLDER, "reply_drafts.md")
 APPROVED = os.path.join(FOLDER, "approved_replies.md")
 

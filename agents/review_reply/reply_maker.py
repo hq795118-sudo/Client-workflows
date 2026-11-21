@@ -33,6 +33,8 @@ def make_reply(business_name, review):
 
 def save_draft(business_name, review, sentiment, reply):
     folder = os.path.join(os.path.dirname(__file__), "output")
+    safe = "".join(c if c.isalnum() else "_" for c in business_name.strip().lower()) or "default"
+    folder = os.path.join(folder, safe)
     os.makedirs(folder, exist_ok=True)
     path = os.path.join(folder, "reply_drafts.md")
     with open(path, "a", encoding="utf-8") as f:
