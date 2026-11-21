@@ -29,7 +29,7 @@ if __name__ == "__main__":
     approved_count = 0
 
     for number, draft in enumerate(drafts, start=1):
-        if draft in already:
+        if draft.replace('Status: DRAFT, approval pending', 'Status: APPROVED') in already:
             continue
         print("=" * 50)
         print(f"Draft {number} of {len(drafts)}")
@@ -39,7 +39,7 @@ if __name__ == "__main__":
             break
         if choice == "y":
             with open(APPROVED, "a", encoding="utf-8") as f:
-                f.write(draft + "\n\n")
+                f.write(draft.replace('Status: DRAFT, approval pending', 'Status: APPROVED') + "\n\n")
             approved_count += 1
             print("Manzoor ho gaya.")
         elif choice == "n":
