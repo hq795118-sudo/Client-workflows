@@ -24,10 +24,19 @@ TEMPLATES = {
 }
 
 
+_counters = {}
+
+
+def _next_index(sentiment, size):
+    n = _counters.get(sentiment, 0)
+    _counters[sentiment] = n + 1
+    return n % size
+
+
 def make_reply(business_name, review):
     sentiment = detect_sentiment(review)
     options = TEMPLATES[sentiment]
-    reply = options[len(review) % len(options)].format(name=business_name)
+    reply = options[_next_index(sentiment, len(options))].format(name=business_name)
     return sentiment, reply
 
 
