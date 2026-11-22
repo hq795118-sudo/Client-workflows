@@ -27,6 +27,12 @@ NEGATIVE_WORDS |= {"disgusting", "horrible", "terrible", "filthy", "overpriced",
 NEGATIVE_PHRASES += ["not recommended", "dont recommend", "do not recommend", "not worth", "shame on you", "nothing special", "not satisfied", "not impressed", "never going back", "wasnt good", "wasnt that good", "bilkul bekar", "theek nahi", "thik nahi", "pasand nahi", "maza nahi"]
 
 
+NEGATIVE_PHRASES += ["wait bohat", "bohat wait", "long wait", "waited too long", "wait time"]
+
+
+NEGATIVE_PHRASES += ["wait bohat", "bohat wait", "long wait", "waited too long", "wait time"]
+
+
 def detect_sentiment(review):
     text = review.lower()
 
